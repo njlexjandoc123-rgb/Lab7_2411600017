@@ -1,0 +1,243 @@
+/* =====================================================
+   Student Portal Inventory - Custom Theme
+   Color scheme inspired by education / campus branding
+   Primary: Deep Navy (#1e3a5f)
+   Accent: Ocean Blue (#0284c7)
+   Success: Green
+   Warning / Low stock: Amber
+   ===================================================== */
+
+:root {
+    --primary: #1e3a5f;
+    --primary-dark: #152a45;
+    --primary-light: #2c5282;
+    --accent: #0284c7;
+    --accent-hover: #0369a1;
+    --success: #059669;
+    --warning: #d97706;
+    --danger: #dc2626;
+    --sidebar-width: 260px;
+    --bg-light: #f0f4f8;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+    width: var(--sidebar-width);
+    min-height: 100vh;
+    background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    transition: margin-left 0.25s ease;
+    position: sticky;
+    top: 0;
+}
+
+.sidebar-header {
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h4 {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    margin: 0.15rem 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.sidebar .nav-link.active {
+    background-color: var(--accent);
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 0.5rem;
+}
+
+/* Main content area */
+#page-content-wrapper {
+    min-height: 100vh;
+    background-color: var(--bg-light);
+}
+
+/* Cards */
+.stat-card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card .card-body {
+    padding: 1.5rem;
+}
+
+.stat-card .stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.stat-card.primary .stat-icon { background: rgba(30, 58, 95, 0.12); color: var(--primary); }
+.stat-card.success .stat-icon { background: rgba(5, 150, 105, 0.12); color: var(--success); }
+.stat-card.warning .stat-icon { background: rgba(217, 119, 6, 0.12); color: var(--warning); }
+.stat-card.danger .stat-icon { background: rgba(220, 38, 38, 0.12); color: var(--danger); }
+.stat-card.accent .stat-icon { background: rgba(2, 132, 199, 0.12); color: var(--accent); }
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--primary-light);
+    border-color: var(--primary-light);
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: #fff;
+}
+
+/* Tables */
+.table-products {
+    background: #fff;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.table-products thead {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.table-products thead th {
+    border: none;
+    font-weight: 600;
+    padding: 0.9rem 1rem;
+}
+
+.table-products tbody td {
+    vertical-align: middle;
+    padding: 0.85rem 1rem;
+}
+
+/* Badges */
+.badge-stock {
+    font-weight: 500;
+    padding: 0.35em 0.65em;
+}
+
+/* Forms */
+.form-card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: var(--card-shadow);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 0.2rem rgba(2, 132, 199, 0.25);
+}
+
+/* Login / Auth pages */
+.auth-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, #075985 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-width: 420px;
+    width: 100%;
+}
+
+.auth-card .card-header {
+    background: #fff;
+    border-bottom: none;
+    padding: 1.75rem 1.75rem 0.5rem;
+    text-align: center;
+}
+
+.auth-card .card-header h3 {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.auth-card .card-body {
+    padding: 1.5rem 1.75rem 2rem;
+}
+
+/* Responsive sidebar collapse */
+#wrapper.toggled .sidebar {
+    margin-left: calc(-1 * var(--sidebar-width));
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        margin-left: calc(-1 * var(--sidebar-width));
+        position: fixed;
+        z-index: 1050;
+    }
+    #wrapper.toggled .sidebar {
+        margin-left: 0;
+    }
+}
+
+/* Utility */
+.text-primary-custom { color: var(--primary) !important; }
+.bg-primary-custom { background-color: var(--primary) !important; }
+.bg-accent { background-color: var(--accent) !important; }
